@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Bhaskara</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font: bold 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var a = parseFloat (window.prompt ('Qual o valor do "a"?'))
+        var b = parseFloat (window.prompt ('Qual o valor do "b"?'))
+        var c = parseFloat (window.prompt ('Qual o valor do "c"?'))
+        var delta = b * b - (4 * a * c)
+        
+        var numero = delta;
+        var raizdelta = 1, dividido = 0;
+        for (var  i = 0; i < numero; i++) {
+        dividido = numero / raizdelta;
+        raizdelta = (dividido + raizdelta) / 2;
+} 
+        var numerador1 = (- b + raizdelta)
+        var numerador2 = (- b - raizdelta)
+        var denominador = (2 * a)
+        var solução1 = numerador1 / denominador
+        var solução2 = numerador2 / denominador
+        
+        if (numerador1, numerador2 < denominador)
+        solução1, solução2 = `${numerador1, numerador2}/${denominador}`
+        
+        document.write (`O conjunto solução é: ${solução1} e ${solução2}</br>`)
+        document.write (`O valor de delta é: ${delta}</br>`)
+        document.write (`O valor da raiz de delta é: ${raizdelta}</br>`)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 004</title>
+    <style>
+        body {
+            color: black;
+            font: bold 20pt Arial;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        var nome = window.prompt ('Qual é o seu nome?')
+        document.write (`Seu nome tem ${nome.length} letras</br>`) // "document.write" vai mostrar na página o texto e a informação da variável (o texto precisa estar entre crases)
+        document.write (`Seu nome maiúsculo é: ${nome.toUpperCase()}</br>`) // "</br>" um código HTML mais conhecido como break roll, faz com que o texto pule uma linha
+        document.write (`Seu nome minúsculo é: ${nome.toLowerCase()}`) // "${}" template string
+
+// ".length" mostra quantos caracteres a string tem
+// ".toUpperCase" transforma o texto todo em letras maiúsculas, ".toLowerCase" em minúsculas         
+
+    </script> 
+</body>
+</html>

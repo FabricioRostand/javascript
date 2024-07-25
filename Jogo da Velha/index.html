@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" type="text/css" href="C:\Users\Fabricio\Desktop\CursoJS\Aula 04\styles.css">
+</head>
+<body>
+    <h1>Jogo da Velha</h1>
+    <div class="container">
+        <form id="playerNamesForm">
+            <label for="player1Name">Nome do Jogador 1:</label>
+            <input type="text" id="player1Name" name="player1Name" required>
+            <label for="player2Name">Nome do Jogador 2:</label>
+            <input type="text" id="player2Name" name="player2Name" required>
+            <button type="submit">Iniciar Jogo</button>
+        </form>
+        <div id="playersInfo">
+            <div id="player1Info" class="player-info">Jogador 1: <span id="player1Wins">0</span> vitórias</div>
+            <div id="player2Info" class="player-info">Jogador 2: <span id="player2Wins">0</span> vitórias</div>
+            <div id="drawsInfo" class="player-info">Empates: <span id="draws">0</span></div>
+        </div>
+        <div id="board" class="board">
+            <div id="cell0" class="cell"></div>
+            <div id="cell1" class="cell"></div>
+            <div id="cell2" class="cell"></div>
+            <div id="cell3" class="cell"></div>
+            <div id="cell4" class="cell"></div>
+            <div id="cell5" class="cell"></div>
+            <div id="cell6" class="cell"></div>
+            <div id="cell7" class="cell"></div>
+            <div id="cell8" class="cell"></div>
+        </div>
+        <div id="message" class="message"></div>
+    </div>
+    <button id="restartButton" class="restart-button">Reiniciar</button>
+    <script src="C:\Users\Fabricio\Desktop\CursoJS\Aula 04\script.js"></script>
+</body>
+</html>
+

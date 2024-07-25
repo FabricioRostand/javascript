@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Bhaskara</title>
+    <style>
+        body {
+            background-color: black;
+            color: whitesmoke;
+            text-align: center;
+            font: bold 20pt Arial;
+        }
+        h2 {
+            font: bold 20pt Arial;
+        }
+        /* Adicione esta regra para alterar o tamanho do texto dos coeficientes */
+        input[type="text"] {
+            font-size: 10pt; /* Tamanho do texto dos coeficientes */
+        }    
+        button[type="submit"] {
+            font: 13pt Arial;
+            background-color: rgb(163, 163, 163);
+        }  
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Bhaskara</h1><br><br>
+    <h2>Informe os coeficientes da equação:</h2><br>
+    <form id="coeficientes">
+        <label for="coefa">a:</label>
+        <input type="text" id="coefa" name="coefa"><br><br>
+        <label for="coefb">b:</label>
+        <input type="text" id="coefb" name="coefb"><br><br>
+        <label for="coefc">c:</label>
+        <input type="text" id="coefc" name="coefc"><br><br>
+        
+        <button type="submit">Calcular</button><br><br><br><br>
+    </form>
+    <div id="resultado"></div>
+    <script>
+        // Função para calcular o máximo divisor comum (MDC)
+        function mdc(a, b) {
+            return b === 0 ? a : mdc(b, a % b);
+        }
+
+        // Função para converter um número decimal em fração
+        function converterParaFracao(numero) {
+            const tolerance = 1.0E-6;
+            let h1 = 1;
+            let h2 = 0;
+            let k1 = 0;
+            let k2 = 1;
+            let b = numero;
+            do {
+                let a = Math.floor(b);
+                let aux = h1;
+                h1 = a * h1 + h2;
+                h2 = aux;
+                aux = k1;
+                k1 = a * k1 + k2;
+                k2 = aux;
+                b = 1 / (b - a);
+            } while (Math.abs(numero - h1 / k1) > numero * tolerance);
+
+            return `${h1}/${k1}`;
+        }
+
+        document.getElementById('coeficientes').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            // Solicitar os valores de a, b e c
+            var a = parseFloat(document.getElementById('coefa').value);
+            var b = parseFloat(document.getElementById('coefb').value);
+            var c = parseFloat(document.getElementById('coefc').value);
+            
+            var delta = b * b - (4 * a * c);
+
+            // Calcular as raízes
+            var raizDelta = Math.sqrt(Math.abs(delta));
+            var x1 = (-b + raizDelta) / (2 * a);
+            var x2 = (-b - raizDelta) / (2 * a);
+
+            // Converter as raízes para frações, se necessário
+            var solução1, solução2;
+
+            if (Number.isInteger(x1)) {
+                solução1 = x1;
+            } else {
+                solução1 = converterParaFracao(x1);
+            }
+
+            if (Number.isInteger(x2)) {
+                solução2 = x2;
+            } else {
+                solução2 = converterParaFracao(x2);
+            }
+            
+            // Exibindo os resultados em elementos <div>
+            document.getElementById('resultado').innerHTML = `
+                <div>&Delta;: ${delta}</div><br>
+                <div>Raiz de &Delta;: ${raizDelta}</div><br>
+                <div>Conjunto solução: {${solução1} , ${solução2}}</div><br>
+            `;
+        });
+    </script>
+</body>
+</html>

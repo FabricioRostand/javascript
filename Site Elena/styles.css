@@ -1,0 +1,69 @@
+body {
+    background-color: rgb(175, 255, 255);
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox para centralizar vertical e horizontalmente */
+    justify-content: center; /* Centralize horizontalmente */
+    align-items: center; /* Centralize verticalmente */
+    height: 100vh; /* Altura total da viewport */
+    position: relative; /* Adiciona posição relativa ao corpo */
+}
+.fototuco1 {
+    position: absolute;
+    top: 50px; /* Posição em relação ao topo */
+    left: 50px; /* Posição em relação à esquerda */
+}
+.fototuco2 {
+    position: absolute;
+    top: 150px; /* Posição em relação ao topo */
+    right: 50px; /* Posição em relação à direita */
+}
+.fototuco3 {
+    position: absolute;
+    bottom: 50px; /* Posição em relação à parte inferior */
+    left: 50px; /* Posição em relação à esquerda */
+}
+.fototuco4 {
+    position: absolute;
+    bottom: 150px; /* Posição em relação à parte inferior */
+    right: 50px; /* Posição em relação à direita */
+}
+.fototuco5 {
+    position: absolute;
+    top: 300px; /* Posição em relação ao topo */
+    left: 200px; /* Posição em relação à esquerda */
+}
+.fototuco6 {
+    position: absolute;
+    top: 300px; /* Posição em relação ao topo */
+    right: 200px; /* Posição em relação à direita */
+}
+.fototuco7 {
+    position: absolute;
+    top: 300px; /* Posição em relação ao topo */
+    right: 200px; /* Posição em relação à direita */
+}
+.fototuco8 {
+    position: absolute;
+    top: 300px; /* Posição em relação ao topo */
+    right: 200px; /* Posição em relação à direita */
+}
+.fototuco9 {
+    position: absolute;
+    top: 300px; /* Posição em relação ao topo */
+    right: 200px; /* Posição em relação à direita */
+}
+.fototuco10 {
+    position: absolute;
+    top: 300px; /* Posição em relação ao topo */
+    right: 200px; /* Posição em relação à direita */
+}
+h1 {
+    text-align: center;
+    font-size: 40pt;
+    font-family: 'Comic Sans MS', cursive;
+    background-image: linear-gradient(to right, red, orange, rgb(218, 218, 0), green, cyan, rgb(255, 0, 234), rgb(160, 88, 102));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
