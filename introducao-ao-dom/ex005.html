@@ -10,6 +10,10 @@
             color: white;
             font: normal 1rem Arial;
         }
+
+        div {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -19,10 +23,17 @@
     <div>Clique em mim</div>
     
     <script>
-        let div = document.querySelector('div')
+        let div = document.querySelector('div');
+        
         div.onclick = () => {
-            div.style.color = 'red'
-        } 
+            let currentColor = window.getComputedStyle(div).color;
+            
+            if (currentColor === 'rgb(255, 255, 255)') {
+                div.style.color = 'red';
+            } else if (currentColor === 'rgb(255, 0, 0)') {
+                div.style.color = 'white';
+            }
+        };
     </script>
 </body>
 </html>
