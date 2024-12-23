@@ -9,6 +9,17 @@ function verifyAge() {
         }
     }
 
+    const resultDiv = document.getElementById('result');
+
+    if (!bornYear || !gender) {
+        resultDiv.innerHTML = "Por favor, insira o ano de nascimento e selecione o sexo.";
+        resultDiv.style.display = "block";
+        resultDiv.classList.add('error');
+        return;
+    }
+
+    resultDiv.classList.remove('error');
+
     if (gender === 'masculino') {
         gender = 'Homem';
     } else {
@@ -17,14 +28,7 @@ function verifyAge() {
 
     const age = 2024 - parseInt(bornYear);
 
-    const resultDiv = document.getElementById('result');
-    resultDiv.style.height = 
-    
-    document.getElementById('result').innerHTML = `${gender} com ${age} anos`;
+    resultDiv.style.height = 'auto';
+    resultDiv.innerHTML = `${gender} com ${age} anos`;
+    resultDiv.style.display = "block";
 }
-
-function main() {
-    verifyAge();
-}
-
-main();
