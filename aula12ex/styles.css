@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #5436ffc9;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main h1 {
+    text-align: center;
+    color: #ffffff;
+    margin: 2rem;
+    text-shadow: 2px 2px 4px #00000033, -2px -2px 4px #00000033;
+
+}
+
+div#container {
+    background-color: #ffffff;
+    height: 400px;
+    width: 600px;
+    margin: auto;
+    margin-bottom: 20rem;
+    border-radius: .7rem;
+    box-shadow: 0 6px 12px #00000080, 0 3px 6px #00000080;
+}
+
+div#container h2 {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+div#container p {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+div#image {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-image: url(images/manha.jpg);
+    background-size: cover;
+    margin: auto;
+    box-shadow: 0 6px 12px #00000080, 0 3px 6px #00000080;
+} 
