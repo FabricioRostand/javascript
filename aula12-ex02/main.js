@@ -1,4 +1,5 @@
 function verifyAge() {
+    const year = 2024;
     const bornYear = document.getElementById('year').value;
     const elementsGender = document.getElementsByName('gender');
     let gender = '';
@@ -18,6 +19,13 @@ function verifyAge() {
         return;
     }
 
+    if (bornYear > year) {
+        resultDiv.innerHTML = 'Por favor, verifique os dados inseridos.';
+        resultDiv.style.display = 'block';
+        resultDiv.classList.add('error');
+        return;
+    }
+
     resultDiv.classList.remove('error');
 
     if (gender === 'masculino') {
@@ -26,7 +34,7 @@ function verifyAge() {
         gender = 'Mulher';
     }
 
-    const age = 2024 - parseInt(bornYear);
+    const age = year - parseInt(bornYear);
 
     resultDiv.style.height = 'auto';
     resultDiv.innerHTML = `${gender} com ${age} anos`;
