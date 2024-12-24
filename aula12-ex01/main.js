@@ -16,15 +16,17 @@ function updateTime() {
 function updateImage(hour) {
     const image = document.getElementById('image');
 
-    if (hour < 12) {
+    if (hour >= 5 && hour < 12 ) {
         image.style.backgroundImage = 'url("images/manha.jpg")';
-    } else if (hour < 18) {
+        document.body.style.background = '#e2cd9f'
+    } else if (hour >= 12 && hour < 19) {
         image.style.backgroundImage = 'url("images/tarde.jpg")';
+        document.body.style.background = '#b9846f'
     } else {
         image.style.backgroundImage = 'url("images/noite.jpg")';
+        document.body.style.background = '#515154'
     }
 }
-
 function main() {
     updateTime();
     setInterval(updateTime, 1000);
